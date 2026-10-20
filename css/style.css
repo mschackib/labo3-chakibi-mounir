@@ -1,5 +1,8 @@
 /* [T1] VARIABLES DE LA CHARTE */
-:root {
+:root,
+[data-theme="claire"] {
+    --couleur-surface: white;
+    --couleur-lien: #2563eb;
     --couleur-fond: #fcfbf7;
     --couleur-texte: #0f172a;
     --couleur-primaire: #2563eb;
@@ -8,6 +11,31 @@
     --couleur-bordure: #e2e8f0;
     --couleur-sombre: #090d16;
     --couleur-erreur: #dc2626;
+    --couleur-texte-badge: #0f172a;   /* texte foncé sur fond vert, identique dans les deux thèmes */
+}
+
+
+[data-theme="sombre"] {
+    --couleur-fond: #121212;
+    --couleur-surface: #1e1e1e;
+    --couleur-texte: #ededed;
+    --couleur-lien: #7ab8ff;
+    --couleur-bordure: #3a3a3a;
+    --couleur-sombre: #000000;
+    --couleur-erreur: #ff8a80;
+
+    /* Variables de Bootstrap : cartes, champs, texte secondaire */
+    --bs-body-bg: #1e1e1e;
+    --bs-body-bg-rgb: 30, 30, 30;              
+    --bs-body-color: #ededed;
+    --bs-border-color: #3a3a3a;
+    --bs-secondary-color: #a3a3a3;
+    --bs-emphasis-color: #ededed;              
+    --bs-emphasis-color-rgb: 237, 237, 237;    
+    --bs-link-color: #7ab8ff;                 
+    --bs-link-color-rgb: 122, 184, 255;        
+    --bs-link-hover-color: #a8d0ff;            
+    --bs-link-hover-color-rgb: 168, 208, 255;  
 }
 
 /* [T2] TYPOGRAPHIE */
@@ -28,13 +56,13 @@ h2 { font-size: 1.75rem; }   /* 28 px */
 
 /* EN-TÊTE */
 .navbar-principale {
-    background-color: white;
+    background-color: var(--couleur-surface);   /* ✏️ était white */
 }
 
 /* Lien actif en bleu, comme dans la charte.
    Même précision que la règle de Bootstrap, et ma feuille vient APRÈS. */
 .navbar-principale .nav-link.active {
-    color: var(--couleur-primaire);
+    color: var(--couleur-lien);   /* ✏️ était --couleur-primaire */
 }
 
 /* [T9] PERSONNALISER BOOTSTRAP - les boutons primaires
@@ -47,6 +75,17 @@ h2 { font-size: 1.75rem; }   /* 28 px */
     --bs-btn-hover-border-color: var(--couleur-primaire-fonce);
 }
 
+/* ✏️ [T9] PERSONNALISER BOOTSTRAP - les boutons contour
+   Même bleu que les liens : lisible dans les deux thèmes. */
+.btn-outline-primary {
+    --bs-btn-color: var(--couleur-lien);
+    --bs-btn-border-color: var(--couleur-lien);
+    --bs-btn-hover-bg: var(--couleur-primaire);
+    --bs-btn-hover-border-color: var(--couleur-primaire);
+    --bs-btn-active-bg: var(--couleur-primaire);
+    --bs-btn-active-border-color: var(--couleur-primaire);
+}
+
 /* ACCUEIL */
 
 /* Étiquette verte : texte foncé sur fond vert = contraste suffisant */
@@ -54,7 +93,7 @@ h2 { font-size: 1.75rem; }   /* 28 px */
     display: inline-block;
     padding: 0.25rem 0.75rem;
     background-color: var(--couleur-accent);
-    color: var(--couleur-texte);
+    color: var(--couleur-texte-badge);   /* ✏️ était --couleur-texte */
     font-weight: 700;
     text-transform: uppercase;
     border-radius: 50rem;
@@ -71,14 +110,14 @@ h2 { font-size: 1.75rem; }   /* 28 px */
 .etape {
     height: 100%;
     padding: 1.5rem;
-    background-color: white;
+    background-color: var(--couleur-surface);   /* ✏️ était white */
     border: 1px solid var(--couleur-bordure);
     border-radius: 0.75rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .etape .numero {
-    color: var(--couleur-primaire);
+    color: var(--couleur-lien);   /* ✏️ était --couleur-primaire */
     font-size: 1.5rem;
     font-weight: 800;
 }
@@ -107,7 +146,7 @@ h2 { font-size: 1.75rem; }   /* 28 px */
 }
 
 .prix {
-    color: var(--couleur-primaire);
+    color: var(--couleur-lien);   /* ✏️ était --couleur-primaire */
     font-weight: 800;
 }
 
@@ -135,7 +174,7 @@ h2 { font-size: 1.75rem; }   /* 28 px */
 /* Étiquette de catégorie : texte foncé sur fond vert (charte : badges) */
 .badge-categorie {
     background-color: var(--couleur-accent);
-    color: var(--couleur-texte);
+    color: var(--couleur-texte-badge);   /* ✏️ était --couleur-texte */
 }
 
 /* FICHE VÉLO */
@@ -172,7 +211,7 @@ h2 { font-size: 1.75rem; }   /* 28 px */
 /* [T4] MODÈLE DE BOÎTE - l'encadré du prix */
 .encadre-prix {
     padding: 1.5rem;
-    background-color: white;
+    background-color: var(--couleur-surface);
     border: 1px solid var(--couleur-bordure);
     border-radius: 1rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -186,7 +225,7 @@ h2 { font-size: 1.75rem; }   /* 28 px */
 .tableau-specs {
     width: 100%;
     border-collapse: collapse;
-    background-color: white;
+    background-color: var(--couleur-surface);
 }
 
 .tableau-specs caption {
@@ -217,7 +256,7 @@ h2 { font-size: 1.75rem; }   /* 28 px */
 .boite-formulaire {
     max-width: 50rem;
     padding: 2rem;
-    background-color: white;
+    background-color: var(--couleur-surface);
     border: 1px solid var(--couleur-bordure);
     border-radius: 1rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -243,7 +282,7 @@ h2 { font-size: 1.75rem; }   /* 28 px */
     font-size: 9rem;
     font-weight: 800;
     line-height: 1;
-    color: var(--couleur-primaire);
+    color: var(--couleur-lien);   /* ✏️ était --couleur-primaire */
 }
 
 /* PIED DE PAGE */
