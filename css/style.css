@@ -1,0 +1,285 @@
+/* [T1] VARIABLES DE LA CHARTE */
+:root {
+    --couleur-fond: #fcfbf7;
+    --couleur-texte: #0f172a;
+    --couleur-primaire: #2563eb;
+    --couleur-primaire-fonce: #1d4ed8;
+    --couleur-accent: #10b981;
+    --couleur-bordure: #e2e8f0;
+    --couleur-sombre: #090d16;
+    --couleur-erreur: #dc2626;
+}
+
+/* [T2] TYPOGRAPHIE */
+body {
+    font-family: system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--couleur-texte);
+    background-color: var(--couleur-fond);
+}
+
+h1, h2, h3, .h5 {
+    font-weight: 800;
+}
+
+h1 { font-size: 2.25rem; }   /* 36 px */
+h2 { font-size: 1.75rem; }   /* 28 px */
+
+/* EN-TÊTE */
+.navbar-principale {
+    background-color: white;
+}
+
+/* Lien actif en bleu, comme dans la charte.
+   Même précision que la règle de Bootstrap, et ma feuille vient APRÈS. */
+.navbar-principale .nav-link.active {
+    color: var(--couleur-primaire);
+}
+
+/* [T9] PERSONNALISER BOOTSTRAP - les boutons primaires
+   Pas de !important : .btn-primary a la même précision que chez Bootstrap,
+   et ma feuille est chargée APRÈS. */
+.btn-primary {
+    --bs-btn-bg: var(--couleur-primaire);
+    --bs-btn-border-color: var(--couleur-primaire);
+    --bs-btn-hover-bg: var(--couleur-primaire-fonce);
+    --bs-btn-hover-border-color: var(--couleur-primaire-fonce);
+}
+
+/* ACCUEIL */
+
+/* Étiquette verte : texte foncé sur fond vert = contraste suffisant */
+.sur-titre {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--couleur-accent);
+    color: var(--couleur-texte);
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 50rem;
+}
+
+/* [T5] FLEXBOX - la barre de recherche : champ et bouton côte à côte */
+.recherche {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 28rem;
+}
+
+/* [T4] MODÈLE DE BOÎTE - les étapes */
+.etape {
+    height: 100%;
+    padding: 1.5rem;
+    background-color: white;
+    border: 1px solid var(--couleur-bordure);
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.etape .numero {
+    color: var(--couleur-primaire);
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+/* [T9] PERSONNALISER BOOTSTRAP - les cartes vélo
+   La variable --bs-card-border-radius arrondit aussi l'image du haut. */
+.carte-velo {
+    --bs-card-border-radius: 1rem;
+    border: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: 0.25s;
+}
+
+/* [T8] ÉTATS ET TRANSITIONS - la carte monte au survol */
+.carte-velo:hover,
+.carte-velo:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Toutes les photos des cartes ont la même hauteur */
+.carte-velo img {
+    height: 220px;
+    object-fit: cover;           /* recadre la photo sans la déformer */
+    object-position: center 80%; /* garde le bas de la photo, où est le vélo */
+}
+
+.prix {
+    color: var(--couleur-primaire);
+    font-weight: 800;
+}
+
+/* Bandeau d'appel à l'action */
+.bandeau-cta {
+    padding: 3rem 1rem;
+    background-color: var(--couleur-sombre);
+    color: white;
+    border-radius: 1rem;
+}
+
+/* CATALOGUE */
+.entete-catalogue {
+    margin-bottom: 1.5rem;
+}
+
+/* Les filtres à gauche, le tri à droite (sur téléphone : l'un sous l'autre) */
+.filtres {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/* Étiquette de catégorie : texte foncé sur fond vert (charte : badges) */
+.badge-categorie {
+    background-color: var(--couleur-accent);
+    color: var(--couleur-texte);
+}
+
+/* FICHE VÉLO */
+
+/* La grande photo de la fiche */
+.photo-fiche {
+    height: 420px;
+    object-fit: cover;
+    object-position: center 85%; /* garde le bas de la photo, où est le vélo */
+    border-radius: 1rem;
+}
+
+/* Les deux petites photos de détail : même hauteur, recadrées */
+.photo-detail {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 0.75rem;
+}
+
+/* [T5] FLEXBOX - les 3 chiffres clés côte à côte */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    text-align: center;
+}
+
+.stats strong {
+    display: block;
+    font-size: 1.25rem;
+}
+
+/* [T4] MODÈLE DE BOÎTE - l'encadré du prix */
+.encadre-prix {
+    padding: 1.5rem;
+    background-color: white;
+    border: 1px solid var(--couleur-bordure);
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.encadre-prix .prix {
+    font-size: 1.75rem;
+}
+
+/* [T10] TABLEAU STYLÉ - les spécifications techniques */
+.tableau-specs {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.tableau-specs caption {
+    caption-side: top;
+}
+
+.tableau-specs th,
+.tableau-specs td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--couleur-bordure);
+    text-align: left;
+}
+
+/* En-tête du tableau aux couleurs de la charte */
+.tableau-specs thead th {
+    background-color: var(--couleur-sombre);
+    color: white;
+}
+
+/* [T3] PSEUDO-CLASSE STRUCTURELLE - une ligne sur deux */
+.tableau-specs tbody tr:nth-child(even) {
+    background-color: var(--couleur-bordure);
+}
+
+/* RÉSERVATION */
+
+/* [T4] MODÈLE DE BOÎTE - le formulaire dans une boîte blanche */
+.boite-formulaire {
+    max-width: 50rem;
+    padding: 2rem;
+    background-color: white;
+    border: 1px solid var(--couleur-bordure);
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* [T10] FORMULAIRE STYLÉ - bordure rouge si le champ est mal rempli,
+   verte s'il est correct (seulement après que l'utilisateur l'a touché) */
+.form-control:user-invalid,
+.form-select:user-invalid {
+    border-color: var(--couleur-erreur);
+}
+
+.form-control:user-valid,
+.form-select:user-valid {
+    border-color: var(--couleur-accent);
+}
+
+/* PAGE 404 */
+
+/* Le grand chiffre « 404 » en bleu de la charte */
+.code-erreur {
+    margin-bottom: 1rem;
+    font-size: 9rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--couleur-primaire);
+}
+
+/* PIED DE PAGE */
+.pied-de-page {
+    padding: 2rem 0;
+    background-color: var(--couleur-sombre);
+    color: white;
+}
+
+.liens-pied {
+    list-style: none;
+    padding: 0;
+}
+
+/* [T3] SÉLECTEUR DESCENDANT */
+.pied-de-page a {
+    color: white;
+    transition: color 0.2s;
+}
+
+/* [T8] ÉTATS ET TRANSITIONS */
+.pied-de-page a:hover,
+.pied-de-page a:focus-visible {
+    color: var(--couleur-accent);
+}
+
+/* [T6] GRID - une colonne sur téléphone */
+.colonnes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+/* [T7] MEDIA QUERY - trois colonnes dès 768 px */
+@media (min-width: 768px) {
+    .colonnes {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

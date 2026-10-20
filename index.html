@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Accueil - ÉlectroLoc</title>
+    <meta name="description" content="Louez un vélo électrique pour la saison, puis gardez-le ou rendez-le.">
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-principale">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.svg" alt="" width="32" height="32" class="d-inline-block align-text-top">
+                    ÉlectroLoc
+                </a>
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#menu"
+                        aria-controls="menu" aria-expanded="false" aria-label="Ouvrir le menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="catalogue.html">Catalogue</a></li>
+                        <li class="nav-item"><a class="nav-link" href="comment-ca-marche.html">Comment ça marche</a></li>
+                        <li class="nav-item"><a class="nav-link" href="a-propos.html">À propos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    <a class="btn btn-primary ms-lg-3" href="reservation.html">Réserver un vélo</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+
+        <!-- Zone d'accueil : texte à gauche, photo à droite -->
+        <section class="row align-items-center g-4 mb-5">
+            <div class="col-12 col-lg-6">
+                <p class="sur-titre">Location saisonnière</p>
+                <h1>Roulez avant de décider de l'acheter.</h1>
+                <p class="lead">Un dépôt égal au prix du vélo, une saison pour en profiter, puis vous le gardez ou vous le rendez.</p>
+                <a class="btn btn-primary btn-lg" href="catalogue.html">Voir le catalogue</a>
+
+                <!-- [F-11] RECHERCHER UN VÉLO - interface seulement
+                     Au Labo 3, recherche.js affichera seulement les vélos
+                     dont le nom contient le mot tapé.
+                     Pour l'instant, le formulaire mène au catalogue. -->
+                <form class="recherche mt-4" action="catalogue.html" method="get">
+                    <label class="visually-hidden" for="recherche">Rechercher un vélo</label>
+                    <input class="form-control" type="search" id="recherche" name="recherche" placeholder="Ex. : City Volt S">
+                    <button class="btn btn-outline-primary" type="submit">Rechercher</button>
+                </form>
+            </div>
+            <div class="col-12 col-lg-6">
+                <img class="img-fluid rounded-4" src="images/accueil-banniere.jpg" alt="Femme roulant en ville sur un vélo électrique vert">
+            </div>
+        </section>
+
+        <!-- Comment ça fonctionne : 3 étapes -->
+        <section class="mb-5">
+            <h2 class="text-center mb-4">Comment ça fonctionne ?</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="etape">
+                        <p class="numero">01</p>
+                        <h3 class="h5">Dépôt initial</h3>
+                        <p>Vous versez un dépôt égal au prix du vélo pour commencer la saison.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="etape">
+                        <p class="numero">02</p>
+                        <h3 class="h5">Location saisonnière</h3>
+                        <p>Vous roulez autant que vous voulez, entretien et assistance inclus.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="etape">
+                        <p class="numero">03</p>
+                        <h3 class="h5">Achat ou retour</h3>
+                        <p>Vous gardez le vélo, ou vous le rendez et récupérez votre dépôt, moins le loyer.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nos modèles : 3 cartes vélo -->
+        <section class="mb-5">
+            <h2 class="mb-4">Nos modèles</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card carte-velo h-100">
+                        <img class="card-img-top" src="images/velo-urban-one.jpg" alt="Vélo électrique Urban One à cadre ouvert, noir et brun">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Urban One</h3>
+                            <p class="card-text">Autonomie 60 km · 25 km/h</p>
+                            <p class="prix">1 400 $ CA</p>
+                            <a class="btn btn-outline-primary" href="fiche-velo-2.html">Voir la fiche de l'Urban One</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card carte-velo h-100">
+                        <img class="card-img-top" src="images/velo-city-volt-s.jpg" alt="Vélo électrique City Volt S noir garé en ville">
+                        <div class="card-body">
+                            <h3 class="card-title h5">City Volt S</h3>
+                            <p class="card-text">Autonomie 80 km · 32 km/h</p>
+                            <p class="prix">1 800 $ CA</p>
+                            <a class="btn btn-outline-primary" href="fiche-velo.html">Voir la fiche du City Volt S</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card carte-velo h-100">
+                        <img class="card-img-top" src="images/velo-cargo-ampere.jpg" alt="Cycliste sur le vélo cargo Cargo Ampère en ville">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Cargo Ampère</h3>
+                            <p class="card-text">Autonomie 50 km · 25 km/h</p>
+                            <p class="prix">2 200 $ CA</p>
+                            <a class="btn btn-outline-primary" href="catalogue.html">Voir tout le catalogue</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bandeau d'appel à l'action -->
+        <section class="bandeau-cta text-center">
+            <h2>Prêt à essayer votre prochain vélo électrique ?</h2>
+            <a class="btn btn-primary btn-lg mt-3" href="reservation.html">Réserver un vélo</a>
+        </section>
+
+    </main>
+
+    <footer class="pied-de-page">
+        <div class="container colonnes">
+            <p>ÉlectroLoc : un dépôt, une saison, puis vous gardez le vélo ou vous le rendez.</p>
+            <ul class="liens-pied">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <p>Photos : Himiway Bikes, Tower Electric Bikes, KBO Bike, Bernhard et Adrian Rudzki sur Unsplash (licence Unsplash).</p>
+        </div>
+    </footer>
+
+    <script src="vendor/bootstrap.bundle.min.js"></script>
+</body>
+</html>

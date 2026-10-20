@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>City Volt S - ÉlectroLoc</title>
+    <meta name="description" content="City Volt S : vélo électrique de 80 km d'autonomie, à louer pour la saison avec un dépôt de 1 800 $.">
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-principale">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.svg" alt="" width="32" height="32" class="d-inline-block align-text-top">
+                    ÉlectroLoc
+                </a>
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#menu"
+                        aria-controls="menu" aria-expanded="false" aria-label="Ouvrir le menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="catalogue.html">Catalogue</a></li>
+                        <li class="nav-item"><a class="nav-link" href="comment-ca-marche.html">Comment ça marche</a></li>
+                        <li class="nav-item"><a class="nav-link" href="a-propos.html">À propos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    <a class="btn btn-primary ms-lg-3" href="reservation.html">Réserver un vélo</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+
+        <!-- Fil d'Ariane : indique où l'on se trouve -->
+        <nav aria-label="Fil d'Ariane">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="catalogue.html">Catalogue</a></li>
+                <li class="breadcrumb-item active" aria-current="page">City Volt S</li>
+            </ol>
+        </nav>
+
+        <section class="row g-4 mb-5">
+
+            <!-- Colonne gauche : photos du vélo -->
+            <div class="col-12 col-lg-7">
+                <!-- Galerie de photos : une grande, deux petites -->
+                <img class="photo-fiche w-100 mb-3" src="images/velo-city-volt-s.jpg" alt="City Volt S noir garé sur un trottoir en ville">
+                <div class="row g-3">
+                    <div class="col-6">
+                        <img class="photo-detail" src="images/city-volt-s-batterie.jpg" alt="Batterie amovible retirée du cadre avec sa clé">
+                    </div>
+                    <div class="col-6">
+                        <img class="photo-detail" src="images/city-volt-s-frein.jpg" alt="Roue arrière et frein à disque">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Colonne droite : informations du vélo -->
+            <div class="col-12 col-lg-5">
+                <span class="badge badge-categorie">Performance urbaine</span>
+                <h1 class="mt-2">City Volt S</h1>
+                <p>Conçu pour les trajets quotidiens et les longues promenades. Son moteur puissant et sa grande autonomie vous garantissent des déplacements fluides sans effort.</p>
+
+                <div class="stats mb-4">
+                    <p><strong>80 km</strong> Autonomie</p>
+                    <p><strong>32 km/h</strong> Vitesse max</p>
+                    <p><strong>21 kg</strong> Poids</p>
+                </div>
+
+                <div class="encadre-prix">
+                    <p class="prix">1 800 $ CA</p>
+                    <p>Dépôt de garantie, égal au prix d'achat.</p>
+                    <ul>
+                        <li>Utilisation illimitée tout au long de la saison</li>
+                        <li>Entretien complet et révisions inclus</li>
+                        <li>En fin de saison : vous le gardez ou vous le rendez</li>
+                    </ul>
+
+                    <!-- [F-13] ESTIMER LE LOYER - interface seulement
+                         Au Labo 3, estimation-loyer.js calculera le loyer
+                         selon la durée choisie et l'affichera ci-dessous. -->
+                    <label class="form-label" for="duree">Durée de location</label>
+                    <select class="form-select mb-2" id="duree" name="duree">
+                        <option value="1">1 mois</option>
+                        <option value="3">3 mois</option>
+                        <option value="6">6 mois (saison complète)</option>
+                    </select>
+                    <p class="loyer-estime">Loyer estimé : calcul disponible prochainement</p>
+
+                    <a class="btn btn-primary w-100" href="reservation.html">Réserver le City Volt S</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spécifications techniques : un vrai tableau de données -->
+        <section>
+            <h2 class="mb-3">Spécifications techniques</h2>
+            <div class="table-responsive">
+                <table class="tableau-specs">
+                    <caption>Caractéristiques du City Volt S</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Élément</th>
+                            <th scope="col">Détail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row">Moteur</th><td>250 W, moyeu arrière</td></tr>
+                        <tr><th scope="row">Batterie</th><td>Amovible, lithium-ion 36 V 14 Ah (504 Wh)</td></tr>
+                        <tr><th scope="row">Temps de charge</th><td>4 heures (de 0 à 100 %)</td></tr>
+                        <tr><th scope="row">Freins</th><td>Disques hydrauliques, 180 mm</td></tr>
+                        <tr><th scope="row">Cadre</th><td>Aluminium 6061 renforcé</td></tr>
+                        <tr><th scope="row">Transmission</th><td>8 vitesses</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pied-de-page">
+        <div class="container colonnes">
+            <p>ÉlectroLoc : un dépôt, une saison, puis vous gardez le vélo ou vous le rendez.</p>
+            <ul class="liens-pied">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <p>Photos : Himiway Bikes, Tower Electric Bikes, KBO Bike, Bernhard et Adrian Rudzki sur Unsplash (licence Unsplash).</p>
+        </div>
+    </footer>
+
+    <script src="vendor/bootstrap.bundle.min.js"></script>
+</body>
+</html>

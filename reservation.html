@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Réserver un vélo - ÉlectroLoc</title>
+    <meta name="description" content="Choisissez votre vélo et vos dates, puis réservez votre location saisonnière.">
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-principale">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.svg" alt="" width="32" height="32" class="d-inline-block align-text-top">
+                    ÉlectroLoc
+                </a>
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#menu"
+                        aria-controls="menu" aria-expanded="false" aria-label="Ouvrir le menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="catalogue.html">Catalogue</a></li>
+                        <li class="nav-item"><a class="nav-link" href="comment-ca-marche.html">Comment ça marche</a></li>
+                        <li class="nav-item"><a class="nav-link" href="a-propos.html">À propos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    <a class="btn btn-primary ms-lg-3" href="reservation.html">Réserver un vélo</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+
+        <h1>Réserver un vélo</h1>
+        <p class="lead mb-4">Remplissez ce formulaire : nous vous confirmons la réservation par courriel sous 24 heures.</p>
+
+        <div class="row g-4">
+
+            <!-- Colonne gauche : le formulaire -->
+            <div class="col-12 col-lg-8">
+                <!-- Formulaire de réservation (F-06) : HTML seulement, sans novalidate -->
+                <form class="boite-formulaire" action="merci.html" method="get">
+
+                    <h2 class="h5 mb-3">Vos coordonnées</h2>
+                    <div class="row g-3 mb-4">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="prenom">Prénom</label>
+                            <input class="form-control" type="text" id="prenom" name="prenom" minlength="2" required>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="nom">Nom</label>
+                            <input class="form-control" type="text" id="nom" name="nom" minlength="2" required>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="courriel">Courriel</label>
+                            <input class="form-control" type="email" id="courriel" name="courriel" placeholder="maya@exemple.ca" required>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="telephone">Téléphone</label>
+                            <input class="form-control" type="tel" id="telephone" name="telephone"
+                                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format attendu : 514-555-1234"
+                                   aria-describedby="aide-telephone">
+                            <div class="form-text" id="aide-telephone">Format : 514-555-1234</div>
+                        </div>
+                    </div>
+
+                    <h2 class="h5 mb-3">Votre location</h2>
+                    <div class="row g-3 mb-4">
+                        <div class="col-12">
+                            <label class="form-label" for="velo">Vélo choisi</label>
+                            <select class="form-select" id="velo" name="velo" required>
+                                <option value="">Choisissez un vélo…</option>
+                                <option value="urban-one">Urban One - dépôt 1 400 $</option>
+                                <option value="city-volt-s">City Volt S - dépôt 1 800 $</option>
+                                <option value="cargo-ampere">Cargo Ampère - dépôt 2 200 $</option>
+                                <option value="metro-lite">Metro Lite - dépôt 1 250 $</option>
+                                <option value="trail-e-x">Trail E-X - dépôt 2 400 $</option>
+                                <option value="e-cruiser-comfort">E-Cruiser Comfort - dépôt 1 650 $</option>
+                            </select>
+                        </div>
+
+                        <!-- [F-14] VÉRIFIER LES DATES - interface seulement
+                             Au Labo 3, verification-dates.js affichera un message
+                             si la date de retour est avant la date de prise en charge. -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="date-debut">Date de prise en charge</label>
+                            <input class="form-control" type="date" id="date-debut" name="date-debut" required>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="date-fin">Date de retour prévue</label>
+                            <input class="form-control" type="date" id="date-fin" name="date-fin" required>
+                        </div>
+
+                        <div class="col-12">
+                            <fieldset>
+                                <legend class="form-label fs-6">Mode de retrait</legend>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="retrait-boutique" name="retrait" value="boutique" checked>
+                                    <label class="form-check-label" for="retrait-boutique">En boutique</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="retrait-livraison" name="retrait" value="livraison">
+                                    <label class="form-check-label" for="retrait-livraison">Livraison à domicile</label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="couverture" name="options" value="couverture">
+                                <label class="form-check-label" for="couverture">Ajouter la couverture vol et casse</label>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label" for="message">Commentaire (facultatif)</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" maxlength="500"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" id="conditions" name="conditions" required>
+                        <label class="form-check-label" for="conditions">J'accepte les conditions de location</label>
+                    </div>
+
+                    <button class="btn btn-primary btn-lg" type="submit">Envoyer ma réservation</button>
+                </form>
+            </div>
+
+            <!-- Colonne droite : rappel des conditions -->
+            <aside class="col-12 col-lg-4">
+                <div class="p-4 bg-white border rounded-4 shadow-sm">
+                    <h2 class="h5">Bon à savoir</h2>
+                    <ul>
+                        <li>Le dépôt est égal au prix du vélo.</li>
+                        <li>Il vous est remboursé si vous rendez le vélo, moins le loyer.</li>
+                        <li>L'entretien est compris toute la saison.</li>
+                        <li>Confirmation par courriel sous 24 heures.</li>
+                    </ul>
+                    <a href="comment-ca-marche.html">Voir comment fonctionne la location</a>
+                </div>
+            </aside>
+
+        </div>
+
+    </main>
+
+    <footer class="pied-de-page">
+        <div class="container colonnes">
+            <p>ÉlectroLoc : un dépôt, une saison, puis vous gardez le vélo ou vous le rendez.</p>
+            <ul class="liens-pied">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <p>Photos : Himiway Bikes, Tower Electric Bikes, KBO Bike, Bernhard et Adrian Rudzki sur Unsplash (licence Unsplash).</p>
+        </div>
+    </footer>
+
+    <script src="vendor/bootstrap.bundle.min.js"></script>
+</body>
+</html>

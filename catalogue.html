@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Catalogue - ÉlectroLoc</title>
+    <meta name="description" content="Découvrez nos 6 vélos électriques à louer pour la saison, avec leur autonomie et leur dépôt.">
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-principale">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.svg" alt="" width="32" height="32" class="d-inline-block align-text-top">
+                    ÉlectroLoc
+                </a>
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#menu"
+                        aria-controls="menu" aria-expanded="false" aria-label="Ouvrir le menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="catalogue.html">Catalogue</a></li>
+                        <li class="nav-item"><a class="nav-link" href="comment-ca-marche.html">Comment ça marche</a></li>
+                        <li class="nav-item"><a class="nav-link" href="a-propos.html">À propos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    <a class="btn btn-primary ms-lg-3" href="reservation.html">Réserver un vélo</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+
+        <div class="entete-catalogue">
+            <h1>Notre collection de vélos</h1>
+            <p>6 modèles disponibles</p>
+        </div>
+
+        <!-- [F-11] RECHERCHER UN VÉLO - interface seulement
+             Au Labo 3, recherche.js affichera seulement les vélos
+             dont le nom contient le mot tapé. -->
+        <form class="recherche mb-3" action="catalogue.html" method="get">
+            <label class="visually-hidden" for="recherche">Rechercher un vélo</label>
+            <input class="form-control" type="search" id="recherche" name="recherche" placeholder="Ex. : City Volt S">
+            <button class="btn btn-outline-primary" type="submit">Rechercher</button>
+        </form>
+
+        <!-- [F-12] FILTRER LE CATALOGUE - interface seulement
+             Au Labo 3, filtres.js masquera les cartes dont la catégorie
+             (attribut data-categorie) ne correspond pas au bouton choisi.
+             Pour l'instant, les boutons et le tri ne font rien. -->
+        <div class="filtres mb-4">
+            <div class="d-flex flex-wrap gap-2">
+                <button class="btn btn-primary" type="button">Tous les vélos</button>
+                <button class="btn btn-outline-primary" type="button">Urbain</button>
+                <button class="btn btn-outline-primary" type="button">Performance</button>
+                <button class="btn btn-outline-primary" type="button">Cargo</button>
+            </div>
+            <div>
+                <label class="visually-hidden" for="tri">Trier les vélos</label>
+                <select class="form-select" id="tri" name="tri">
+                    <option value="populaire">Trier par : popularité</option>
+                    <option value="prix">Trier par : prix</option>
+                    <option value="autonomie">Trier par : autonomie</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Les 6 vélos : 1 colonne sur téléphone, 2 sur tablette, 3 sur ordinateur -->
+        <section>
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-4" data-categorie="urbain">
+                    <div class="card carte-velo h-100">
+                        <img class="card-img-top" src="images/velo-urban-one.jpg" alt="Vélo électrique Urban One à cadre ouvert, noir et brun">
+                        <div class="card-body">
+                            <span class="badge badge-categorie">Urbain</span>
+                            <h2 class="card-title h5 mt-2">Urban One</h2>
+                            <p class="card-text">60 km · 25 km/h · 19 kg</p>
+                            <p class="prix">Dépôt : 1 400 $ CA</p>
+                            <a class="btn btn-outline-primary" href="fiche-velo-2.html">Fiche de l'Urban One</a>
+                            <a class="btn btn-primary" href="reservation.html">Réserver<span class="visually-hidden"> l'Urban One</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4" data-categorie="performance">
+                    <div class="card carte-velo h-100">
+                        <img class="card-img-top" src="images/velo-city-volt-s.jpg" alt="Vélo électrique City Volt S noir garé en ville">
+                        <div class="card-body">
+                            <span class="badge badge-categorie">Performance</span>
+                            <h2 class="card-title h5 mt-2">City Volt S</h2>
+                            <p class="card-text">80 km · 32 km/h · 21 kg</p>
+                            <p class="prix">Dépôt : 1 800 $ CA</p>
+                            <a class="btn btn-outline-primary" href="fiche-velo.html">Fiche du City Volt S</a>
+                            <a class="btn btn-primary" href="reservation.html">Réserver<span class="visually-hidden"> le City Volt S</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4" data-categorie="cargo">
+                    <div class="card carte-velo h-100">
+                        <img class="card-img-top" src="images/velo-cargo-ampere.jpg" alt="Cycliste sur le vélo cargo Cargo Ampère en ville">
+                        <div class="card-body">
+                            <span class="badge badge-categorie">Cargo</span>
+                            <h2 class="card-title h5 mt-2">Cargo Ampère</h2>
+                            <p class="card-text">50 km · 25 km/h · 28 kg</p>
+                            <p class="prix">Dépôt : 2 200 $ CA</p>
+                            <a class="btn btn-primary" href="reservation.html">Réserver<span class="visually-hidden"> le Cargo Ampère</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4" data-categorie="urbain">
+                    <div class="card carte-velo h-100">
+                        <img class="card-img-top" src="images/velo-metro-lite.jpg" alt="Vélo électrique Metro Lite noir garé contre un mur gris">
+                        <div class="card-body">
+                            <span class="badge badge-categorie">Urbain</span>
+                            <h2 class="card-title h5 mt-2">Metro Lite</h2>
+                            <p class="card-text">55 km · 25 km/h · 17 kg</p>
+                            <p class="prix">Dépôt : 1 250 $ CA</p>
+                            <a class="btn btn-primary" href="reservation.html">Réserver<span class="visually-hidden"> le Metro Lite</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4" data-categorie="performance">
+                    <div class="card carte-velo h-100">
+                        <img class="card-img-top" src="images/velo-trail-e-x.jpg" alt="Vélo électrique Trail E-X sur un chemin de gravier en montagne">
+                        <div class="card-body">
+                            <span class="badge badge-categorie">Performance</span>
+                            <h2 class="card-title h5 mt-2">Trail E-X</h2>
+                            <p class="card-text">90 km · 32 km/h · 23 kg</p>
+                            <p class="prix">Dépôt : 2 400 $ CA</p>
+                            <a class="btn btn-primary" href="reservation.html">Réserver<span class="visually-hidden"> le Trail E-X</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4" data-categorie="urbain">
+                    <div class="card carte-velo h-100">
+                        <img class="card-img-top" src="images/velo-e-cruiser-comfort.jpg" alt="Vélo électrique E-Cruiser Comfort sur une plage">
+                        <div class="card-body">
+                            <span class="badge badge-categorie">Urbain</span>
+                            <h2 class="card-title h5 mt-2">E-Cruiser Comfort</h2>
+                            <p class="card-text">70 km · 25 km/h · 22 kg</p>
+                            <p class="prix">Dépôt : 1 650 $ CA</p>
+                            <a class="btn btn-primary" href="reservation.html">Réserver<span class="visually-hidden"> l'E-Cruiser Comfort</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pied-de-page">
+        <div class="container colonnes">
+            <p>ÉlectroLoc : un dépôt, une saison, puis vous gardez le vélo ou vous le rendez.</p>
+            <ul class="liens-pied">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <p>Photos : Himiway Bikes, Tower Electric Bikes, KBO Bike, Bernhard et Adrian Rudzki sur Unsplash (licence Unsplash).</p>
+        </div>
+    </footer>
+
+    <script src="vendor/bootstrap.bundle.min.js"></script>
+</body>
+</html>
