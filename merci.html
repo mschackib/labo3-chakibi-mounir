@@ -7,6 +7,8 @@
     <meta name="description" content="Votre demande a bien été envoyée à ÉlectroLoc.">
     <link rel="stylesheet" href="vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/theme.js" defer></script>
+    <script src="js/mes_reservations.js" defer></script>
 </head>
 <body>
 
@@ -52,6 +54,17 @@
             </ul>
 
             <a class="btn btn-primary btn-lg mt-3" href="index.html">Retour à l'accueil</a>
+        </section>
+
+        <!-- Récapitulatif -->
+        <section class="boite-formulaire mx-auto mt-4">
+            <h2 class="h5">Récapitulatif de votre dernière réservation</h2>
+            <p id="recapitulatif"></p>
+
+            <h2 class="h5 mt-4">Mes réservations</h2>
+            <ul id="liste-reservations"></ul>
+
+            <button type="button" id="bouton-effacer" class="btn btn-outline-danger">Tout effacer</button>
         </section>
 
     </main>
