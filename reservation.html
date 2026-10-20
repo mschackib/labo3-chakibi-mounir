@@ -47,27 +47,31 @@
             <!-- Colonne gauche : le formulaire -->
             <div class="col-12 col-lg-8">
                 <!-- Formulaire de réservation (F-06) : HTML seulement, sans novalidate -->
-                <form class="boite-formulaire" action="merci.html" method="get">
+                <form id ="formulaire-reservation" class="boite-formulaire" action="merci.html" method="get" novalidate>
 
                     <h2 class="h5 mb-3">Vos coordonnées</h2>
                     <div class="row g-3 mb-4">
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="prenom">Prénom</label>
                             <input class="form-control" type="text" id="prenom" name="prenom" minlength="2" required>
+                              <p class="erreur" id="erreur-prenom"></p>
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="nom">Nom</label>
                             <input class="form-control" type="text" id="nom" name="nom" minlength="2" required>
+                              <p class="erreur" id="erreur-prenom"></p>
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="courriel">Courriel</label>
                             <input class="form-control" type="email" id="courriel" name="courriel" placeholder="maya@exemple.ca" required>
+                              <p class="erreur" id="erreur-prenom"></p>
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="telephone">Téléphone</label>
                             <input class="form-control" type="tel" id="telephone" name="telephone"
                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format attendu : 514-555-1234"
                                    aria-describedby="aide-telephone">
+                                  <p class="erreur" id="erreur-prenom"></p>
                             <div class="form-text" id="aide-telephone">Format : 514-555-1234</div>
                         </div>
                     </div>

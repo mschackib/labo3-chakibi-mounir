@@ -270,9 +270,21 @@ h2 { font-size: 1.75rem; }   /* 28 px */
 }
 
 .form-control:user-valid,
+
+
 .form-select:user-valid {
     border-color: var(--couleur-accent);
 }
+
+
+/* Message d'erreur sous un champ (rempli par le JS) */
+.erreur {
+    margin: 0.25rem 0 0;
+    font-size: 0.875rem;
+    color: var(--couleur-erreur);
+}
+
+
 
 /* PAGE 404 */
 
