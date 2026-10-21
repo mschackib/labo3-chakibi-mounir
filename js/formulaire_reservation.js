@@ -23,6 +23,7 @@ const erreur_nom = document.querySelector("#erreur-nom");
 const erreur_courriel = document.querySelector("#erreur-courriel");
 const erreur_telephone = document.querySelector("#erreur-telephone");
 const erreur_velo = document.querySelector("#erreur-velo");
+const erreur_date_depart = document.querySelector("#erreur-date_depart");
 const erreur_date_fin = document.querySelector("#erreur-date_fin");
 const erreur_conditions = document.querySelector("#erreur-conditions");
 
@@ -68,7 +69,7 @@ function verifierCourriel() {
         erreur_courriel.textContent = "Saisir votre courriel.";
         return false;
     }
-    if (!courriel.includes("@") || !courriel.includes(".")) {
+    if (!courriel.includes("@") || !courriel.includes(".") || !champ_courriel.checkValidity()) {
         erreur_courriel.textContent = "Saisir un courriel valide.";
         return false;
     }
@@ -77,7 +78,7 @@ function verifierCourriel() {
 }
 
 // Règle 3 : format du téléphone (facultatif) - s'il est rempli,
-// il doit respecter le pattern HTML5 du champ (514-555-1234).
+// il doit respecter le pattern HTML5 du champ.
 // checkValidity() relit les attributs HTML5 du Laboratoire 2.
 function verifierTelephone() {
     if (champ_telephone.value !== "" && !champ_telephone.checkValidity()) {
@@ -101,9 +102,12 @@ function verifierVelo() {
 // Règle 5 : cohérence entre deux champs - la fin est après le début de la location
 function verifierDates() {
     if (champ_date_depart.value === "") {
-        erreur_date_fin.textContent = "Indiquer la date de début de la location.";
+        erreur_date_depart.textContent = "Indiquer la date de début de la location.";
+        erreur_date_fin.textContent = "";
         return false;
     }
+    erreur_date_depart.textContent = "";
+
     if (champ_date_fin.value === "") {
         erreur_date_fin.textContent = "Indiquer la date de fin de la location.";
         return false;

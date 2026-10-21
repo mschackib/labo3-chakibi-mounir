@@ -65,16 +65,16 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="courriel">Courriel</label>
-                            <input class="form-control" type="email" id="courriel" name="courriel" placeholder="maya@exemple.ca" required>
+                            <input class="form-control" type="email" id="courriel" name="courriel" placeholder="Laurence@exemple.ca" required>
                               <p class="erreur" id="erreur-courriel"></p> 
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="telephone">Téléphone</label>
                             <input class="form-control" type="tel" id="telephone" name="telephone"
-                                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format attendu : 514-555-1234"
+                                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format attendu : 513-765-7431"
                                    aria-describedby="aide-telephone">
                                   <p class="erreur" id="erreur-telephone"></p>
-                            <div class="form-text" id="aide-telephone">Format : 514-555-1234</div>
+                            <div class="form-text" id="aide-telephone">Format : 513-765-7431</div>
                         </div>
                     </div>
 
@@ -98,6 +98,7 @@
                     <div class="col-12 col-md-6">
                         <label class="form-label" for="date_depart">Date de prise en charge</label>
                         <input class="form-control" type="date" id="date_depart" name="date_depart" required>
+                        <p class="erreur" id="erreur-date_depart"></p>
                     </div>
                     <div class="col-12 col-md-6">
                         <label class="form-label" for="date_fin">Date de retour prévue</label>
@@ -135,6 +136,7 @@
                     <div class="form-check mb-4">
                         <input class="form-check-input" type="checkbox" id="conditions" name="conditions" required>
                         <label class="form-check-label" for="conditions">J'accepte les conditions de location</label>
+                        <p class="erreur" id="erreur-conditions"></p>
                     </div>
 
                     <button class="btn btn-primary btn-lg" type="submit">Envoyer ma réservation</button>

@@ -12,6 +12,12 @@
     --couleur-sombre: #090d16;
     --couleur-erreur: #dc2626;
     --couleur-texte-badge: #0f172a;   /* texte foncé sur fond vert, identique dans les deux thèmes */
+
+    /* Liens Bootstrap (fil d'Ariane...) : bleu de la charte, contraste AA */
+    --bs-link-color: #2563eb;
+    --bs-link-color-rgb: 37, 99, 235;
+    --bs-link-hover-color: #1d4ed8;
+    --bs-link-hover-color-rgb: 29, 78, 216;
 }
 
 
@@ -84,6 +90,19 @@ h2 { font-size: 1.75rem; }   /* 28 px */
     --bs-btn-hover-border-color: var(--couleur-primaire);
     --bs-btn-active-bg: var(--couleur-primaire);
     --bs-btn-active-border-color: var(--couleur-primaire);
+}
+
+/* [T9] PERSONNALISER BOOTSTRAP - le bouton « Tout effacer »
+   Rouge de la charte : lisible dans les deux thèmes (contraste AA). */
+.btn-outline-danger {
+    --bs-btn-color: var(--couleur-erreur);
+    --bs-btn-border-color: var(--couleur-erreur);
+    --bs-btn-hover-color: var(--couleur-fond);
+    --bs-btn-hover-bg: var(--couleur-erreur);
+    --bs-btn-hover-border-color: var(--couleur-erreur);
+    --bs-btn-active-color: var(--couleur-fond);
+    --bs-btn-active-bg: var(--couleur-erreur);
+    --bs-btn-active-border-color: var(--couleur-erreur);
 }
 
 /* ACCUEIL */
@@ -333,4 +352,8 @@ h2 { font-size: 1.75rem; }   /* 28 px */
     .colonnes {
         grid-template-columns: repeat(3, 1fr);
     }
+}
+
+[data-theme="sombre"] .navbar-toggler-icon {
+    filter: invert(1);
 }
